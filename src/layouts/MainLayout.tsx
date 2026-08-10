@@ -1,10 +1,10 @@
-type Props = {
+type MainLayoutProps = {
   children: React.ReactNode;
 };
 
-export default function MainLayout({ children }: Props) {
+export default function MainLayout({ children }: MainLayoutProps) {
   return (
-    <div className="flex h-screen bg-slate-950 text-white">
+    <div className="flex min-h-screen bg-slate-950 text-slate-100">
       {children}
     </div>
   );
