@@ -1,4 +1,4 @@
-import {
+﻿import {
   Database,
   FolderKanban,
   Lightbulb,
@@ -9,12 +9,17 @@ import MetricCard from "../components/dashboard/MetricCard";
 import QuickActions from "../components/dashboard/QuickActions";
 import ActivityPanel from "../components/dashboard/ActivityPanel";
 
+import { useProjectsStore } from "../store/projectsStore";
+
 export default function Dashboard() {
+  const projects = useProjectsStore(
+    (state) => state.projects
+  );
+
   return (
     <div className="min-h-full bg-slate-950 p-8">
       <div className="mx-auto max-w-7xl">
 
-        {/* Header */}
         <div>
           <p className="text-sm font-medium text-cyan-400">
             DBA AI STUDIO
@@ -30,7 +35,6 @@ export default function Dashboard() {
           </p>
         </div>
 
-        {/* Metrics */}
         <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
 
           <MetricCard
@@ -42,8 +46,8 @@ export default function Dashboard() {
 
           <MetricCard
             title="Projects"
-            value={0}
-            description="Proyectos activos"
+            value={projects.length}
+            description="Proyectos registrados"
             icon={FolderKanban}
           />
 
@@ -63,7 +67,6 @@ export default function Dashboard() {
 
         </div>
 
-        {/* Main panels */}
         <div className="mt-6 grid gap-6 lg:grid-cols-3">
 
           <div className="lg:col-span-2">
