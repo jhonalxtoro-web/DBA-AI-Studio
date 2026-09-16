@@ -11,6 +11,7 @@ import Dashboard from "./pages/Dashboard";
 import SQLServer from "./pages/SQLServer";
 import AI from "./pages/AI";
 import Projects from "./pages/Projects";
+import Labs from "./pages/Labs";
 import Knowledge from "./pages/Knowledge";
 import Roadmap from "./pages/Roadmap";
 import Study from "./pages/Study";
@@ -52,6 +53,11 @@ export const router = createBrowserRouter([
         path: "/projects",
         element: <Projects />,
       },
+{
+  path: "/labs",
+  element: <Labs />,
+},
+
       {
         path: "/knowledge",
         element: <Knowledge />,

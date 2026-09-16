@@ -3,6 +3,7 @@ import {
   Bot,
   BookOpen,
   Database,
+  FlaskConical,
   FolderKanban,
   GraduationCap,
   LayoutDashboard,
@@ -40,6 +41,11 @@ const navigation = [
         path: "/projects",
         icon: FolderKanban,
       },
+        {
+      name: "Labs",
+      path: "/labs",
+      icon: FlaskConical,
+    },
       {
         name: "Knowledge",
         path: "/knowledge",
@@ -156,9 +162,9 @@ export default function Sidebar() {
               Environment
             </p>
 
-            <p className="text-xs text-emerald-400">
-              ● Local
-            </p>
+           <p className="text-xs text-emerald-400">
+  ● Local
+        </p>
           </div>
 
           <div className="rounded-md bg-slate-800 px-2 py-1 text-[10px] text-slate-500">
