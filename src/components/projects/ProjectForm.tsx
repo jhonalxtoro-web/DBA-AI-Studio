@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import type {
   Project,
@@ -79,15 +79,6 @@ export function ProjectForm({
   );
   const [notes, setNotes] = useState(project?.notes ?? "");
 
-  useEffect(() => {
-    setName(project?.name ?? "");
-    setDescription(project?.description ?? "");
-    setStatus(project?.status ?? "idea");
-    setPriority(project?.priority ?? "medium");
-    setCategory(project?.category ?? "other");
-    setTechnologies(project?.technologies.join(", ") ?? "");
-    setNotes(project?.notes ?? "");
-  }, [project]);
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();

@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import type {
   Lab,
@@ -152,26 +152,6 @@ export function LabForm({
     arrayToText(lab?.references ?? [])
   );
 
-  useEffect(() => {
-    setProjectId(lab?.projectId ?? "");
-    setName(lab?.name ?? "");
-    setDescription(lab?.description ?? "");
-    setStatus(lab?.status ?? "idea");
-    setDifficulty(lab?.difficulty ?? "beginner");
-    setCategory(lab?.category ?? "performance");
-    setObjectives(arrayToText(lab?.objectives ?? []));
-    setPrerequisites(arrayToText(lab?.prerequisites ?? []));
-    setTechnologies(lab?.technologies.join(", ") ?? "");
-    setEnvironment(lab?.environment ?? "");
-    setSetupScript(lab?.setupScript ?? "");
-    setExecutionScript(lab?.executionScript ?? "");
-    setDiagnosticScript(lab?.diagnosticScript ?? "");
-    setExpectedResult(lab?.expectedResult ?? "");
-    setActualResult(lab?.actualResult ?? "");
-    setConclusion(lab?.conclusion ?? "");
-    setBestPractices(arrayToText(lab?.bestPractices ?? []));
-    setReferences(arrayToText(lab?.references ?? []));
-  }, [lab]);
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();

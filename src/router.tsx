@@ -1,11 +1,6 @@
-import {
-  createBrowserRouter,
-  Outlet,
-} from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
-import MainLayout from "./layouts/MainLayout";
-import Sidebar from "./components/layout/Sidebar";
-import Header from "./components/layout/Header";
+import AppLayout from "./layouts/AppLayout";
 
 import Dashboard from "./pages/Dashboard";
 import SQLServer from "./pages/SQLServer";
@@ -17,21 +12,6 @@ import Roadmap from "./pages/Roadmap";
 import Study from "./pages/Study";
 import Settings from "./pages/Settings";
 
-function AppLayout() {
-  return (
-    <MainLayout>
-      <Sidebar />
-
-      <div className="flex min-w-0 flex-1 flex-col">
-        <Header />
-
-        <main className="min-h-0 flex-1 overflow-auto">
-          <Outlet />
-        </main>
-      </div>
-    </MainLayout>
-  );
-}
 
 export const router = createBrowserRouter([
   {
@@ -53,10 +33,10 @@ export const router = createBrowserRouter([
         path: "/projects",
         element: <Projects />,
       },
-{
-  path: "/labs",
-  element: <Labs />,
-},
+      {
+        path: "/labs",
+        element: <Labs />,
+      },
 
       {
         path: "/knowledge",
